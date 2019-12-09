@@ -2,7 +2,7 @@
     <div>
         <div class="title"><img class="title-img" src="https://imgs.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png"><span class='title-desc'>猜你喜欢</span></div>
         <ul>
-            <li class='item' v-for='item of recommendList' :key="item.id">
+            <li class='item' v-for='item of list' :key="item.id">
                 <img class="item-img" :src="item.imgUrl" alt="">
                 <div class="item-info">
                     <div class="item-title">{{item.title}}</div>
@@ -18,25 +18,8 @@
 <script>
     export default {
         name:'HomeRecommend',
-        data(){
-            return {
-                recommendList:[{
-                    id:'0001',
-                    imgUrl:'https://imgs.qunarzz.com/sight/p0/201309/25/70edd368471094bdc8d65eac.jpg_200x200_75b6f391.jpg',
-                    title:'临安湍口众安氡温泉',
-                    desc:'临安湍口众安氡温泉+水上恒温水世界成人票（赠养生餐1份）'
-                },{
-                    id:'0002',
-                    imgUrl:'https://imgs.qunarzz.com/sight/p0/201309/25/70edd368471094bdc8d65eac.jpg_200x200_75b6f391.jpg',
-                    title:'临安湍口众安氡温泉',
-                    desc:'临安湍口众安氡温泉+水上恒温水世界成人票（赠养生餐1份）'
-                },{
-                    id:'0003',
-                    imgUrl:'https://imgs.qunarzz.com/sight/p0/201309/25/70edd368471094bdc8d65eac.jpg_200x200_75b6f391.jpg',
-                    title:'临安湍口众安氡温泉',
-                    desc:'临安湍口众安氡温泉+水上恒温水世界成人票（赠养生餐1份）'
-                }]
-            }
+        props:{
+            list:Array
         }
     }
 </script>
