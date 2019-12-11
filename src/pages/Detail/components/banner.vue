@@ -3,18 +3,18 @@
         <div class="banner" @click="handleBannerClick">
             <img
                 class="banner-img"
-                src="http://img1.qunarzz.com/sight/p0/1411/b6/662fc49d1d26a5a7775cf6b7f8b4ecec.water.jpg_600x330_c34588e7.jpg" 
+                :src="bannerImg" 
             >
             <div class="banner-info">
-                <div class="banner-title">杭州野生动物世界(AAAA景区)</div>
+                <div class="banner-title">{{this.sightName}}</div>
                 <div class="banner-number">
                     <span class="iconfont banner-icon">&#xe649;</span>
-                    46
+                   {{this.bannerImgs.length}}
                 </div>
             </div>
         </div>
         <common-gallary 
-            :imgs='imgs' 
+            :imgs='bannerImgs' 
             v-show="showGallary"
             @close="handleGallaryClose"
         ></common-gallary>
@@ -28,12 +28,13 @@
         components:{
             CommonGallary
         },
+        props:{
+            sightName:String,
+            bannerImg:String,
+            bannerImgs:Array
+        },
         data (){
             return {
-                imgs:[
-                    'http://img1.qunarzz.com/sight/p0/1411/b6/662fc49d1d26a5a7775cf6b7f8b4ecec.water.jpg_350x240_b184c0cd.jpg',
-                    'http://img1.qunarzz.com/sight/p0/1902/d9/d93010284bcaaefda3.img.jpg_350x240_8a5bea15.jpg'
-                ],
                 showGallary:false
             }
         },
