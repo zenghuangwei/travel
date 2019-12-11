@@ -2,14 +2,20 @@
     <div>
         <div class="title"><img class="title-img" src="https://imgs.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png"><span class='title-desc'>猜你喜欢</span></div>
         <ul>
-            <li class='item' v-for='item of list' :key="item.id">
+            <router-link 
+                tag="li"
+                class='item' 
+                v-for='item of list' 
+                :key="item.id"
+                :to="'/detail/'+item.id"
+            >
                 <img class="item-img" :src="item.imgUrl" alt="">
                 <div class="item-info">
                     <div class="item-title">{{item.title}}</div>
                     <div class="item-desc">{{item.desc}}</div>
                     <button class="item-button">查看详情</button>
                 </div>
-            </li>
+            </router-link>
         </ul>
 
     </div>
