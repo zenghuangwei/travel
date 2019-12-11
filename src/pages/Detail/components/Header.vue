@@ -47,6 +47,9 @@
         },
         activated(){
             window.addEventListener('scroll',this.handleScroll)
+        },
+        deactivated(){//全局对象jiebang
+            window.removeEventListener('scroll',this.handleScroll)
         }
     }
 </script>
